@@ -14,15 +14,15 @@ app=Flask(__name__)
 app.secret_key='$_$pecctrums$_$'
 print spell("whtaveer")
 #instantiate flaskMail
-app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_SERVER']='smtp.email.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = "joemartiny1@gmail.com"
+app.config['MAIL_USERNAME'] = "email@client.com"
 app.config['MAIL_PASSWORD'] = password()
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
 #instantiate imap
-mailCheck = imaplib.IMAP4_SSL('imap.gmail.com')
+mailCheck = imaplib.IMAP4_SSL('imap.client.com')
 mailCheck.login(app.config['MAIL_USERNAME'],app.config['MAIL_PASSWORD'])
 print mailCheck.list()
 mailCheck.select('inbox')
